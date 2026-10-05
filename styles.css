@@ -351,6 +351,66 @@ dialog button {
   color: var(--accink);
   border: 1.5px solid var(--accink);
 }
+.cm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+#lista {
+  display: grid;
+  gap: 16px;
+}
+#lista:empty::before {
+  content: "Ainda não há comentários publicados. Seja o primeiro a contar como foi!";
+  color: var(--mut);
+}
+.cmt {
+  background: var(--bg2);
+  padding: 20px;
+  border-left: 4px solid var(--acc);
+}
+.cmt b {
+  font-family: var(--h);
+  font-size: 1.05rem;
+}
+.cmt .st {
+  color: var(--acc);
+  letter-spacing: 2px;
+  margin-left: 8px;
+}
+.cmt p {
+  margin: 8px 0 0;
+}
+#cform {
+  display: grid;
+  gap: 16px;
+}
+#cform label {
+  display: grid;
+  gap: 6px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+#cform input,
+#cform textarea,
+#cform select {
+  font: 400 1rem var(--b);
+  padding: 12px 14px;
+  border: 1.5px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  border-radius: 4px;
+  width: 100%;
+}
+#cform textarea {
+  resize: vertical;
+}
+#msg {
+  margin: 0;
+  color: var(--mut);
+  font-size: 0.95rem;
+}
 footer {
   padding: 28px 0;
   color: var(--mut);
@@ -368,6 +428,10 @@ footer {
   }
   .fin {
     grid-template-columns: 1fr;
+  }
+  .cm {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
   .gal {
     columns: 2;

@@ -26,7 +26,8 @@
         /></a>
         <nav aria-label="Principal">
           <a href="#acabamentos">Acabamentos</a><a href="#galeria">Galeria</a
-          ><a href="#portoes">Portões</a><a href="#orcamento">Orçamento</a>
+          ><a href="#portoes">Portões</a><a href="#orcamento">Orçamento</a
+          ><a href="#comentarios">Comentários</a>
         </nav>
       </div>
     </header>
@@ -291,6 +292,48 @@
               rel="noopener"
               >Ver no Instagram</a
             >
+          </div>
+        </div>
+      </section>
+      <section id="comentarios">
+        <div class="wrap">
+          <div class="head">
+            <h2>O que dizem nossos clientes</h2>
+            <p>
+              Já fez um serviço com a LV? Conte como foi. Os comentários
+              aparecem aqui depois de aprovados.
+            </p>
+          </div>
+          <div class="cm">
+            <div id="lista" aria-live="polite"></div>
+            <form id="cform">
+              <label
+                >Seu nome<input
+                  name="nome"
+                  required
+                  maxlength="60"
+                  autocomplete="name"
+              /></label>
+              <label
+                >Nota<select name="nota">
+                  <option value="5">5 estrelas</option>
+                  <option value="4">4 estrelas</option>
+                  <option value="3">3 estrelas</option>
+                  <option value="2">2 estrelas</option>
+                  <option value="1">1 estrela</option>
+                </select></label
+              >
+              <label
+                >Seu comentário<textarea
+                  name="texto"
+                  required
+                  maxlength="400"
+                  rows="4"
+                ></textarea>
+              </label>
+              <button class="btn" type="submit">Enviar comentário</button>
+              <p id="msg" role="status"></p>
+            </form>
           </div>
         </div>
       </section>
