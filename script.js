@@ -28,11 +28,9 @@ lb.onclick = function (e) {
   if (e.target === lb) lb.close();
 };
 
-/* ===== COMENTÁRIOS (Firebase / Firestore) =====
-   Preencha as duas linhas abaixo com os dados do seu projeto no Firebase.
-   Enquanto estiverem vazias, o formulário envia o comentário pelo WhatsApp. */
-const FB_PROJECT = ""; // ex.: lv-pinturas-12345
-const FB_KEY = ""; // ex.: AIzaSy...
+
+const FB_PROJECT = "lv-pinturas"; 
+const FB_KEY = "AIzaSyC5wmGtn9wDaQVnyGDGGlPYqaWp2f3kM24"; 
 const ZAP = "5511913304248";
 const BASE =
   "https://firestore.googleapis.com/v1/projects/" +
