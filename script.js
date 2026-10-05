@@ -28,7 +28,6 @@ lb.onclick = function (e) {
   if (e.target === lb) lb.close();
 };
 
-
 const FB_PROJECT = "lv-pinturas"; 
 const FB_KEY = "AIzaSyC5wmGtn9wDaQVnyGDGGlPYqaWp2f3kM24"; 
 const ZAP = "5511913304248";
@@ -40,7 +39,7 @@ const lista = document.getElementById("lista"),
   cf = document.getElementById("cform"),
   msg = document.getElementById("msg");
 
-function add(c) {
+function add(c, topo) {
   const d = document.createElement("div");
   d.className = "cmt";
   const b = document.createElement("b");
@@ -54,7 +53,8 @@ function add(c) {
   d.appendChild(b);
   d.appendChild(s);
   d.appendChild(p);
-  lista.appendChild(d);
+  if (topo) lista.prepend(d);
+  else lista.appendChild(d);
 }
 
 function carregar() {
@@ -118,7 +118,7 @@ cf.onsubmit = function (e) {
           nome: { stringValue: nome },
           nota: { integerValue: String(nota) },
           texto: { stringValue: texto },
-          aprovado: { booleanValue: false },
+          aprovado: { booleanValue: true },
           criadoEm: { timestampValue: new Date().toISOString() },
         },
       }),
@@ -126,8 +126,8 @@ cf.onsubmit = function (e) {
       .then(function (r) {
         if (!r.ok) throw 0;
         cf.reset();
-        msg.textContent =
-          "Obrigado! Seu comentário foi enviado e aparecerá no site após a aprovação.";
+        add({ nome: nome, nota: nota, texto: texto }, true);
+        msg.textContent = "Obrigado! Seu comentário foi publicado.";
       })
       .catch(function () {
         msg.textContent = "Não foi possível enviar agora. Tente novamente.";
